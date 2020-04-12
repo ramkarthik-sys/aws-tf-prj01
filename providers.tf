@@ -1,6 +1,6 @@
 provider "aws" {
   version = "~> 2.0"
-  region = var.region
+  region  = var.region
 }
 
 //S3 backend configuration
@@ -10,4 +10,8 @@ terraform {
     key    = "aws-tf-prj01"
     region = "eu-west-1"
   }
+}
+
+data "aws_availability_zones" "available" {
+  state = "available"
 }
